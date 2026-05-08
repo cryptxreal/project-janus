@@ -25,7 +25,7 @@ Discover how weak password hashes can be cracked using brute force techniques. L
 
 1. Clone the repository:
    ```
-   git clone https://github.com/YOUR_USERNAME/project-janus.git
+   git clone https://github.com/cryptxreal/project-janus.git
    ```
 2. Navigate into the project folder:
    ```
