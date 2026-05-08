@@ -49,7 +49,7 @@ project-janus/
 
 ## License
 
-This project is licensed under the **AGPL-3.0 License**. You are free to use and modify this code, but you may not use it for commercial purposes without releasing your modifications under the same license.
+This project is licensed under the **GNU Affero General Public License v3.0**. You are free to use and modify this code, but you may not use it for commercial purposes without releasing your modifications under the same license.
 
 ---
 
