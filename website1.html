@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Login Page</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; background: #f3f4f6; min-height: 100vh;
+           display: flex; align-items: center; justify-content: center; }
+    .card { background: white; border: 1px solid #e5e7eb; border-radius: 12px;
+            padding: 2rem; width: 100%; max-width: 360px; }
+    h1 { font-size: 20px; margin-bottom: 1.5rem; }
+    label { font-size: 13px; color: #6b7280; display: block; margin-bottom: 6px; }
+    input { width: 100%; padding: 8px 12px; border: 1px solid #d1d5db;
+            border-radius: 8px; font-size: 15px; margin-bottom: 1rem; }
+    button { width: 100%; padding: 9px; background: white; border: 1px solid #d1d5db;
+             border-radius: 8px; font-size: 15px; cursor: pointer; }
+    button:hover { background: #f9fafb; }
+    .error { font-size: 13px; color: #dc2626; margin-bottom: 1rem; min-height: 18px; }
+    .success-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px;
+                    padding: 2.5rem; text-align: center; max-width: 360px; }
+    .badge { background: #dcfce7; color: #16a34a; font-size: 13px;
+             padding: 4px 14px; border-radius: 8px; display: inline-block; margin-bottom: 1.25rem; }
+  </style>
+</head>
+<body>
+
+  <div id="login-view">
+    <div class="card">
+      <h1>Sign in</h1>
+      <label>Username</label>
+      <input type="text" id="username" placeholder="Enter username" />
+      <label>Password</label>
+      <input type="password" id="password" placeholder="Enter password" />
+      <p class="error" id="error-msg"></p>
+      <button onclick="tryLogin()">Sign in</button>
+    </div>
+  </div>
+
+  <div id="success-view" style="display:none;">
+    <div class="success-card">
+      <div class="badge">✓ Correct password</div>
+      <h2 style="font-size:22px; margin-bottom:0.5rem;">Welcome!</h2>
+      <p style="color:#6b7280; margin-bottom:1.5rem;">You gave the right password!</p>
+      <button onclick="logout()" style="width:auto; padding:6px 16px;">Sign out</button>
+    </div>
+  </div>
+
+  <script>
+    const CORRECT_USER = "user1";
+    const CORRECT_PASS = "cryptX{b@s1c_webs1te_h@ck1ng}";
+
+    function tryLogin() {
+      const u = document.getElementById("username").value.trim();
+      const p = document.getElementById("password").value;
+      if (u === CORRECT_USER && p === CORRECT_PASS) {
+        document.getElementById("login-view").style.display = "none";
+        document.getElementById("success-view").style.display = "block";
+      } else {
+        document.getElementById("error-msg").textContent = "Incorrect username or password.";
+      }
+    }
+
+    function logout() {
+      document.getElementById("success-view").style.display = "none";
+      document.getElementById("login-view").style.display = "block";
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+      document.getElementById("error-msg").textContent = "";
+    }
+
+    document.getElementById("password").addEventListener("keydown", e => {
+      if (e.key === "Enter") tryLogin();
+    });
+  </script>
+</body>
+</html>
