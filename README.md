@@ -13,11 +13,13 @@ Project Janus includes **3 different vulnerable websites**, each one demonstrati
 ### Website 1 – Plain Text Passwords
 See how some websites store user passwords in plain text with no hashing or encryption. Learn why this is dangerous and how an attacker can exploit it if they gain access to a database.
 
-### Website 2 – SQL Injection
+### Website 2 – Brute Force Hash Cracking
+Discover how weak password hashes can be cracked using brute force techniques. Learn why strong hashing algorithms and salting matter.
+
+### Website 3 – SQL Injection
 Explore one of the most well-known web vulnerabilities. Learn how unsanitized user input can allow an attacker to manipulate a database, bypass login pages, and extract sensitive data.
 
-### Website 3 – Brute Force Hash Cracking
-Discover how weak password hashes can be cracked using brute force techniques. Learn why strong hashing algorithms and salting matter.
+
 
 ---
 
@@ -40,9 +42,11 @@ Discover how weak password hashes can be cracked using brute force techniques. L
 ```
 project-janus/
 ├── website-1-plaintext-passwords/
-├── website-2-sql-injection/
-├── website-3-hash-cracking/
+├── website-2-hash-cracking/
+├── website-3-sql-injection/
+├── walkthough.PPTX
 └── README.md
+
 ```
 
 ---
