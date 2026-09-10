@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>logged in</title>
+  <style>
+    :root {
+      --bg: #0B0E14;
+      --card: #131820;
+      --border: #2A3241;
+      --text: #E7EAEE;
+      --text-muted: #8A93A3;
+      --input-bg: #1B222D;
+      --button-bg: #1B222D;
+      --button-border: #2A3241;
+      --button-hover: #232B38;
+      --error: #E5484D;
+      --badge-bg: #16321F;
+      --badge-text: #3FB27F;
+    }
+    [data-theme="light"] {
+      --bg: #f3f4f6;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --text: #111827;
+      --text-muted: #6b7280;
+      --input-bg: #ffffff;
+      --button-bg: #ffffff;
+      --button-border: #d1d5db;
+      --button-hover: #f9fafb;
+      --error: #dc2626;
+      --badge-bg: #dcfce7;
+      --badge-text: #16a34a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; background: var(--bg); color: var(--text); min-height: 100vh;
+           display: flex; align-items: center; justify-content: center;
+           transition: background 0.2s ease, color 0.2s ease; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+            padding: 2rem; width: 100%; max-width: 360px; }
+    h1 { font-size: 20px; margin-bottom: 1.5rem; }
+    label { font-size: 13px; color: var(--text-muted); display: block; margin-bottom: 6px; }
+    input { width: 100%; padding: 8px 12px; border: 1px solid var(--border); background: var(--input-bg);
+            color: var(--text); border-radius: 8px; font-size: 15px; margin-bottom: 1rem; }
+    button { width: 100%; padding: 9px; background: var(--button-bg); border: 1px solid var(--button-border);
+             color: var(--text); border-radius: 8px; font-size: 15px; cursor: pointer; }
+    button:hover { background: var(--button-hover); }
+    .error { font-size: 13px; color: var(--error); margin-bottom: 1rem; min-height: 18px; }
+    .success-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+                    padding: 2.5rem; text-align: center; max-width: 360px; }
+    .badge { background: var(--badge-bg); color: var(--badge-text); font-size: 13px;
+             padding: 4px 14px; border-radius: 8px; display: inline-block; margin-bottom: 1.25rem; }
+    a.back-link { display: inline-block; margin-top: 0.5rem; font-size: 13px; color: var(--text-muted); }
+
+    .theme-toggle { position: fixed; bottom: 1rem; right: 1rem; background: var(--card);
+                    border: 1px solid var(--border); color: var(--text); border-radius: 999px;
+                    padding: 6px 12px; font-size: 13px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle"> Dark</button>
+
+  <div id="success-view">
+    <div class="success-card">
+      <div class="badge">Flag cryptX{b@s1c_webs1te_h@ck1ng}</div>
+      <h2 style="font-size:22px; margin-bottom:0.5rem;">Welcome!</h2>
+      <p style="color:var(--text-muted); margin-bottom:1.5rem;">You gave the right password!</p>
+      <a class="back-link" href="website1pt1.html">&larr; Sign out</a>
+    </div>
+  </div>
+
+  <script>
+    let theme = "dark";
+    function toggleTheme() {
+      theme = theme === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", theme);
+      document.getElementById("themeToggle").textContent = theme === "dark" ? "Dark" : "Light";
+    }
+    document.documentElement.setAttribute("data-theme", theme);
+  </script>
+</body>
+</html>
